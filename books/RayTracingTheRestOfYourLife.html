@@ -27,16 +27,16 @@ severely limited by a missing mathematical foundation. In this volume, I assume 
 a highly interested student, or are someone who is pursuing a career related to ray tracing. We will
 be diving into the math of creating a very serious ray tracer. When you are done, you should be
 well equipped to use and modify the various commercial ray tracers found in many popular industries,
-such as the movie, television, product design, and architecture.
+such as the movie, television, product design, and architecture industry.
 
-There are many many things I do not cover in this short volume. There are many ways of writing Monte
-Carlo rendering programs--I dive into only one of them. I don’t cover shadow rays (instead deciding
-to make rays more likely to go toward lights), bidirectional methods, Metropolis methods, or photon
-mapping. You'll find many of these techniques in so-called "serious ray tracers", but these
-techniques are not covered here because it is more important to cover the concepts, the math, and
-the terms of the field. I think of this book as a deep exposure that can be your first of many, and
-it will equip you with some of the concepts, math, and terms that you'll need to study all of these
-interesting techniques, and, more, of course.
+There are many many things I do not cover in this short volume. For example, there are many ways of
+writing Monte Carlo rendering programs--I dive into only one of them. I don’t cover shadow rays
+(instead deciding to make rays more likely to go toward lights), nor do I cover any of bidirectional
+methods, Metropolis methods, or photon mappings. You'll find many of these techniques in the
+so-called "serious ray tracers", but they are not covered here because it is more important to cover
+the concepts, the math, and the terms of the field. I think of this book as a deep exposure that
+should be your first of many, and it will equip you with some of the concepts, math, and terms that
+you'll need to study all of these interesting techniques, and hopefully more, of course.
 
 I hope that you find the math as fascinating as I do.
 
@@ -55,8 +55,8 @@ programs, then it'll be good to pause and catch you up. There are two kinds of r
 algorithms: Monte Carlo and Las Vegas. Randomized algorithms can be found everywhere in computer
 graphics, so getting a decent foundation isn't a bad idea. A randomized algorithm uses some amount
 of randomness in its computation. A Las Vegas (LV) random algorithm always produces the correct
-result, whereas a Monte Carlo (MC) algorithm _may_ produce a correct result (and frequently gets it
-wrong!). But for especially complicated problems such as ray tracing, we may not place as huge a
+result, whereas a Monte Carlo (MC) algorithm _may_ produce a correct result--and frequently gets it
+wrong! But for especially complicated problems such as ray tracing, we may not place as huge a
 priority on being perfectly exact as on getting an answer in a reasonable amount of time. LV
 algorithms will eventually arrive at the correct result, but we can't make too many guarantees on
 how long it will take to get there. The classic example of an LV algorithm is the $quicksort$
@@ -503,7 +503,7 @@ Then solving for their expected value:
 Take the limit as $N$ approaches $\infty$
 
     $$ E[f(x') | a \leq x' \leq b] = \lim_{N \to +\infty} \frac{1}{b - a} \sum_{i=0}^{N-1}
-        f(x_i) \Delta x \Big|_{x_i = a + \Delta x * i} $$
+        f(x_i) \Delta x \Big|_{x_i = a + i \Delta x} $$
 
 This is, of course, just a regular integral:
 
@@ -696,9 +696,10 @@ can be  integrated over to determine how likely a result is over an integral.
 
 Constructing a PDF
 -------------------
-Let’s make a PDF and use it a bit to understand it more. Suppose I have a random number $r$ between
-$0$ and $2$ whose probability is proportional to the value of $r$ itself. We would expect the PDF
-$p(r)$ to look something like this:
+Let’s make a PDF and play around with it a bit to understand it more. Suppose I have a random number
+generator that produces a variable $r$ that is constrained between $0$ and $2$ and the probability
+of getting any specific value is proportional to the value of $r$ itself. If we modelled a PDF after
+this random number generator then we would expect the PDF $p(r)$ to look something like this:
 
   ![Figure [linear-pdf]: A linear PDF](../images/fig-3.04-linear-pdf.jpg)
 
