@@ -71,13 +71,13 @@ set ( SOURCE_REST_OF_YOUR_LIFE
 
 # Executables
 add_executable(inOneWeekend      ${SOURCE_ONE_WEEKEND})
-add_executable(theNextWeek       ${SOURCE_NEXT_WEEK})
-add_executable(theRestOfYourLife ${SOURCE_REST_OF_YOUR_LIFE})
-add_executable(cos_cubed         src/TheRestOfYourLife/cos_cubed.cc         ${COMMON_ALL})
-add_executable(cos_density       src/TheRestOfYourLife/cos_density.cc       ${COMMON_ALL})
-add_executable(integrate_x_sq    src/TheRestOfYourLife/integrate_x_sq.cc    ${COMMON_ALL})
-add_executable(pi                src/TheRestOfYourLife/pi.cc                ${COMMON_ALL})
-add_executable(sphere_importance src/TheRestOfYourLife/sphere_importance.cc ${COMMON_ALL})
-add_executable(sphere_plot       src/TheRestOfYourLife/sphere_plot.cc       ${COMMON_ALL})
+# add_executable(theNextWeek       ${SOURCE_NEXT_WEEK})
+# add_executable(theRestOfYourLife ${SOURCE_REST_OF_YOUR_LIFE})
+# add_executable(cos_cubed         src/TheRestOfYourLife/cos_cubed.cc         ${COMMON_ALL})
+# add_executable(cos_density       src/TheRestOfYourLife/cos_density.cc       ${COMMON_ALL})
+# add_executable(integrate_x_sq    src/TheRestOfYourLife/integrate_x_sq.cc    ${COMMON_ALL})
+# add_executable(pi                src/TheRestOfYourLife/pi.cc                ${COMMON_ALL})
+# add_executable(sphere_importance src/TheRestOfYourLife/sphere_importance.cc ${COMMON_ALL})
+# add_executable(sphere_plot       src/TheRestOfYourLife/sphere_plot.cc       ${COMMON_ALL})
 
 include_directories(src/common)
